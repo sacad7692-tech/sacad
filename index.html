@@ -1,43 +1,93 @@
-<div class="header-section">
-    <h1>Saparin Beauty Salon</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saparin Beauty Salon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<div id="Home" class="info-tab show">
-    <h2>Home</h2>
-    <p>
-        Kusoo dhawoow Saparin Beauty Salon. Waxaan bixinnaa adeegyo qurxin oo tayo sare leh
-        si aan kuu siino muuqaal qurux badan iyo kalsooni dheeraad ah. Hadafkeennu waa
-        inaan macaamiisheena siino adeeg heer sare ah iyo soo dhoweyn wanaagsan.
-    </p>
-</div>
+<div class="main-container-unique">
 
-<div id="About" class="info-tab">
-    <h2>About</h2>
-    <p>
-        Saparin Beauty Salon waa goob qurxin oo bixisa adeegyo kala duwan sida
-        daryeelka timaha, qurxinta wajiga, daryeelka maqaarka, iyo adeegyo kale
-        oo la xiriira quruxda. Waxaan ku dadaalnaa qanacsanaanta macaamiisha.
-    </p>
-</div>
-
-<div id="News" class="info-tab">
-    <h2>News</h2>
-    <p>
-        Hadda waxaa socda dalabyo iyo qiimo-dhimisyo gaar ah oo loogu talagalay
-        macaamiisheena. La soco wararkeena si aad uga faa'iidaysato adeegyada
-        cusub iyo fursadaha qurxinta ee ugu dambeeya.
-    </p>
-</div>
-
-<div id="Contact" class="info-tab">
-    <h2>Contact Us</h2>
-    <div class="contact-box">
-        <p>📧 Email: info@infosaparina.beauty</p>
-        <p>📞 Number: +252 61 7860752</p>
-        <p>📍 Address: Maka Al-Mukarama Road, Mogadishu, Somalia</p>
+    <div class="header-section">
+        <h1>Saparin Beauty Salon</h1>
     </div>
+
+    <div class="content-wrapper-flex">
+
+        <nav class="sidebar-nav">
+            <button class="menu-btn active" onclick="showInfo(event, 'Home')">🏠 Home</button>
+            <button class="menu-btn" onclick="showInfo(event, 'About')">ℹ️ About</button>
+            <button class="menu-btn" onclick="showInfo(event, 'News')">📰 News</button>
+            <button class="menu-btn" onclick="showInfo(event, 'Contact')">📞 Contact Us</button>
+        </nav>
+
+        <div class="info-display-area">
+
+            <div id="Home" class="info-tab show">
+                <h2>Home</h2>
+                <p>
+                    Kusoo dhawoow Saparin Beauty Salon. Waxaan bixinnaa adeegyo
+                    qurxin oo tayo sare leh si aan kuu siino muuqaal qurux badan
+                    iyo kalsooni dheeraad ah.
+                </p>
+            </div>
+
+            <div id="About" class="info-tab">
+                <h2>About</h2>
+                <p>
+                    Saparin Beauty Salon waa goob qurxin oo bixisa adeegyo kala duwan
+                    sida daryeelka timaha, daryeelka maqaarka, iyo qurxinta wajiga.
+                </p>
+            </div>
+
+            <div id="News" class="info-tab">
+                <h2>News</h2>
+                <p>
+                    Waxaa hadda socda dalabyo gaar ah iyo adeegyo cusub.
+                    Nala soco si aad uga faa'iidaysato fursadaha ugu dambeeya.
+                </p>
+            </div>
+
+            <div id="Contact" class="info-tab">
+                <h2>Contact Us</h2>
+                <div class="contact-box">
+                    <p>📧 Email: info@infosaparina.beauty</p>
+                    <p>📞 Number: +252 61 7860752</p>
+                    <p>📍 Address: Maka Al-Mukarama Road, Mogadishu, Somalia</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bar">
+        <p>© 2026 Saparin Beauty Salon. All Rights Reserved.</p>
+    </div>
+
 </div>
 
-<div class="footer-bar">
-    <p>© 2026 Saparin Beauty Salon. All Rights Reserved.</p>
-</div>
+<script>
+function showInfo(evt, sectionName) {
+    var i, infoTab, menuBtn;
+
+    infoTab = document.getElementsByClassName("info-tab");
+    for (i = 0; i < infoTab.length; i++) {
+        infoTab[i].classList.remove("show");
+    }
+
+    menuBtn = document.getElementsByClassName("menu-btn");
+    for (i = 0; i < menuBtn.length; i++) {
+        menuBtn[i].className =
+        menuBtn[i].className.replace(" active", "");
+    }
+
+    document.getElementById(sectionName).classList.add("show");
+    evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+</html>
